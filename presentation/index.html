@@ -1,0 +1,590 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Agil aber sicher!</title>
+        <meta name="description" content="Agil aber sicher!">
+        <meta name="author" content="Andreas Falk">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+                <!-- Introduction -->
+                <section>
+                    <section>
+                        <h1>Agil aber sicher!</h1>
+                        <p>
+                            <small>
+                            <a href="https://andifalk.github.io/agil-aber-sicher/presentation/index.html">https://andifalk.github.io/
+                                <br>agil-aber-sicher/ presentation/index.html</a>
+                            </small>
+                        </p>
+                        <img src="images/unsecure_package.png" class="plain" width="60%">
+                    </section>
+                    <section>
+                        <h3>Andreas Falk</h3>
+                        <h4>NovaTec Consulting GmbH</h4>
+                        andreas.falk@novatec-gmbh.de
+                        <br>@NT_AQE, @andifalk
+                        <p><img class="plain" src="images/profile.png" width="53%"></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Unsere Software ist doch sicher!?</h1>
+                    </section>
+                    <section>
+                        <img src="images/cayla_dolls.png" class="plain" width="90%">
+                        <br>
+                            <small>
+                                Quelle: <a href="https://www.troyhunt.com/data-from-connected-cloudpets-teddy-bears-leaked-and-ransomed-exposing-kids-voice-messages/">troyhunt.com</a>
+                            </small>
+                    </section>
+                    <section>
+                        <img src="images/spectre_meltdown.png" class="plain" width="65%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://www.heise.de/security/meldung/MeltdownPrime-SpectrePrime-Neue-Software-automatisiert-CPU-Angriffe-3970686.html">heise.de</a>
+                        </small>
+                    </section>
+                    <section>
+                        <img src="images/equifax.png" class="plain" id="equifax" width="71%">
+                        <br>
+                            <small>
+                                Quelle: <a href="https://www.heise.de/security/meldung/Equifax-Hack-Angreifer-ueber-Apache-Struts-Luecke-eingestiegen-3831905.html">heise.de</a>
+                            </small>
+                    </section>
+                    <section>
+                        <img src="images/anwaltspostfach.png" class="plain">
+                        <br>
+                            <small>
+                                Quelle: <a href="https://www.heise.de/newsticker/meldung/34C3-Das-besondere-Anwaltspostfach-beA-als-besondere-Stuemperei-3928474.html">heise.de</a>
+                            </small>
+                    </section>
+                    <section>
+                        <img src="images/apple_root_luecke.png" class="plain">
+                        <br>
+                            <small>
+                                Quelle: <a href="https://www.heise.de/mac-and-i/meldung/Schwere-Sicherheitsluecke-root-ohne-Passwort-mit-macOS-High-Sierra-3903707.html">heise.de</a>
+                            </small>
+                    </section>
+                    <section>
+                        <h2>State of Software Security Report 2017 (Veracode)</h2>
+                        <img src="images/veracode_state_of_security_2017.png" class="plain">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://info.veracode.com/report-state-of-software-security.html">veracode.com</a>
+                        </small>
+                    </section>
+                    <section>
+                        <img src="images/haveibeenpawned.png" class="plain">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://haveibeenpwned.com">haveibeenpwned.com</a>
+                        </small>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Security ist nicht mein Job!?</h1>
+                    </section>
+                    <section>
+                        <h3>EU Datenschutz Grundverordnung</h3>
+                        <h3>(EU-DSGVO)</h3>
+                        <p>Ab Mai 2018 geltendes Recht!</p>
+                        <img src="images/gdpr_readyness.png" class="plain" width="70%">
+                        <br>
+                        <small>
+                            Quelle: <a href="http://senzing.com/gdpr">GDPR’s Missing Link Report (senzing.com/gdpr)</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h3>Artikel 32</h3>
+                        <h4>(Sicherheit der Verarbeitung)</h4>
+                        <p>
+                        &ldquo;
+                        Unter Berücksichtigung des <u>Stands der Technik</u>, ...
+                        treffen der Verantwortliche ...geeignete <u>technische</u> und <u>organisatorische</u> Maßnahmen,
+                        um ein dem Risiko <u>angemessenes Schutzniveau</u> zu gewährleisten; diese Maßnahmen schließen unter anderem Folgendes ein:
+                        a) die Pseudonymisierung und <u>Verschlüsselung</u> personenbezogener Daten...
+                        &rdquo;
+                        </p>
+                        <small>
+                            Quelle: <a href="http://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32016R0679&from=DE">eur-lex.europa.eu</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h4>Nutzerverhalten</h4>
+                        <img src="images/sicherheitsindex.png" class="plain" width="55%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://www.sicher-im-netz.de/downloads/dsin-sicherheitsindex-2017-0">Deutschland sicher im Netz (DsiN): Sicherheitsindex 2017</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h2>Neue Herausforderungen</h2>
+                        <img src="images/new_requirements.png" class="plain" width="45%">
+                    </section>
+                    <section>
+                        <h4><span style="color: red">1</span> Security-Professional für <span style="color: darkblue">100</span> Entwickler</h4>
+                        <img src="images/developers_security_outnumbers.png" class="plain" width="35%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://www.sonatype.com/devops-survey-report">sonatype.com/devops-survey-report</a>
+                        </small>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h1>Sicherheit</h1>
+                        <h2>Im Projektalltag</h2>
+                    </section>
+                    <section>
+                        <h2>Wir haben doch keine Zeit</h2>
+                        <img src="images/zeit_kosten_features.png" class="plain">
+                    </section>
+                    <section>
+                        <h2>Hacker finden uns nicht? (interessant)</h2>
+                        <img src="images/shodan.png" class="plain" width="100%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://shodan.io">shodan.io</a>
+                        </small>
+                    </section>
+                    <section data-background="images/attacks.png" data-background-size="90%">
+                    </section>
+                    <section>
+                        <h2>Wir haben doch eine Firewall</h2>
+                        <img src="images/firewall.png" class="plain" width="90%">
+                    </section>
+                    <section>
+                        <h3>Ausbildung der Entwickler?</h3>
+                        <p><i>Entwicklung (Kopieren)</i> aus stackoverflow.com</p>
+                        <img src="images/rot13_encryption.png" class="plain" width="100%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://stackoverflow.com">stackoverflow.com</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h1>Weiter so?</h1>
+                        <img src="images/dices.png" class="plain" width="60%">
+                    </section>
+                </section>
+
+                <!-- Secure Development Lifecycles -->
+
+                <section>
+                    <section>
+                        <h1><span style="color: red">sichere</span> Entwicklungs-prozesse ?</h1>
+                    </section>
+                    <section>
+                        <h3>Microsoft Security Development Lifecycle</h3>
+                        <img src="images/microsoft_sdlc.png" class="plain" width="100%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://www.microsoft.com/en-us/sdl">microsoft.com/en-us/sdl</a>
+                        </small>
+                    </section>
+                    <section>
+                        <h3>Adobe Secure Product Lifecycle</h3>
+                        <img src="images/adobe_sdlc.svg" class="plain" width="100%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://www.adobe.com/security/engineering.html">adobe.com/security/engineering.html</a>
+                        </small>
+                    </section>
+                    <section>
+                        <img src="images/waterfall_agile.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <h1>Scrum Guide</h1>
+                        &ldquo;Das Entwicklungsteam besteht aus Profis, die am Ende eines jeden Sprints ein fertiges (<i>Done</i>)
+                        Inkrement übergeben, welches<br> <u>potenziell auslieferbar</u> ist. &rdquo;
+                        <p>
+                            <small>Quelle: <a href="http://www.scrumguides.org">www.scrumguides.org</a></small>
+                        </p>
+                        <img src="images/box.png" class="plain" width="30%">
+                    </section>
+                    <section>
+                        <h2>Potentiell <span style="color: red">unsicher</span> ausliefern ?</h2>
+                        <img src="images/unsecure_package.png" class="plain" width="50%">
+                    </section>
+                    <section>
+                        <h3>Ausgangslage: Security != Agil!</h3>
+                        <img src="images/sprint_ausgangslage.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Agile Entwicklung</th>
+                                <th>Penetration-Testing</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Inkrementell mit schnellem Feedback</td>
+                                <td>Punktuell und Aufwendig</td>
+                            </tr>
+                            <tr>
+                                <td>Innerhalb von Sprints</td>
+                                <td>Abseits von Sprints</td>
+                            </tr>
+                            <tr>
+                                <td>&ldquo;Working software over comprehensive documentation&rdquo;</td>
+                                <td>Umfassende Reports</td>
+                            </tr>
+                            <tr>
+                                <td>Business Value</td>
+                                <td>Nicht-Funktional</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Unverständliche Pen-Test Reports</h2>
+                        <img src="images/unclear_pen_test_report.png" class="plain">
+                    </section>
+                </section>
+
+                <!-- Security + Scrum -->
+
+                <section>
+                    <section>
+                        <h1><span style="color: red">Security</span> in <span style="color: darkblue">Scrum</span></h1>
+                        <img src="images/security_scrum_overview.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <h2>Security Officer/Champion</h2>
+                        <img src="images/security_officer_scrum.png" class="plain">
+                    </section>
+                    <section>
+                        <h3>Security Trainings</h3>
+                        <img src="images/board-928378_1920.jpg" class="plain" width="75%">
+                    </section>
+                    <section>
+                        <h3>Security Trainings</h3>
+                        <img src="images/product_owner.png" class="plain" width="50%">
+                        <br>
+                        <ul>
+                            <li>Sicherheits-Risiken</li>
+                            <li>Datenschutz-Risiken</li>
+                            <li>Threat Modeling</li>
+                            <li><span style="color: red">Ab</span>User Stories (<i>Evil</i> Stories)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Security Trainings</h3>
+                        <img src="images/development_team.png" class="plain" width="50%">
+                        <br>
+                        <ul>
+                            <li>Threat Modeling</li>
+                            <li>Secure Design Patterns</li>
+                            <li>Security Code Reviews</li>
+                            <li>Security Testing</li>
+                            <li>Security Dojos</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1>Open <s>Web</s> Application Security Project</h1>
+                        <img src="images/owasp_logo.jpg" class="plain">
+                        <p>
+                            <small>
+                                <a href="https://www.owasp.org">https://www.owasp.org</a>
+                            </small>
+                        </p>
+                    </section>
+                    <section>
+                        <img src="images/owasp_top_10_2017_changes.png" width="100%" class="plain">
+                        <p><a href="https://github.com/OWASP/Top10">https://github.com/OWASP/Top10</a></p>
+                    </section>
+                    <section>
+                        <h3>Application Security Verification Standard</h3>
+                        <h4>Anforderungen und Tests</h4>
+                        <img src="images/owasp_asvs_levels.png" class="plain" width="30%">
+                        <br>
+                        <small><a href="https://github.com/OWASP/ASVS">https://github.com/OWASP/ASVS</a></small>
+                    </section>
+                    <section>
+                        <h2>Pro Active Controls</h2>
+                        <h4>Patterns für sichere Entwicklung</h4>
+                        <img src="images/owasp_pro_active_controls.png" class="plain" width="70%">
+                        <br>
+                        <small><a href="https://www.owasp.org/index.php/OWASP_Proactive_Controls">https://www.owasp.org/index.php/
+                            OWASP_Proactive_Controls</a></small>
+                    </section>
+                    <section>
+                        <h2>Juice Shop</h2>
+                        <img src="images/juice_shop.png" class="plain">
+                        <p>
+                            <small>
+                                <a href="https://github.com/bkimminich/juice-shop">https://github.com/bkimminich/juice-shop</a>
+                            </small>
+                        </p>
+                    </section>
+                    <section>
+                        <img src="images/product_backlog_security.png" class="plain" width="50%">
+                        <ul>
+                            <li>Threat Model Refinement</li>
+                            <li><span style="color: red">Ab</span>User Stories erstellen</li>
+                            <li>Security Features mit hoher Prio</li>
+                            <li>Akzeptanzkriterien für Sicherheit</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Threat Modeling ist auch Agil</h3>
+                        <img src="images/threat_modeling_agile.png" class="plain">
+                    </section>
+                    <section>
+                        <img src="images/threat_model.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <h3><span style="color: red">Ab</span>User Stories</h3>
+                        <img src="images/abuser_stories.png" class="plain">
+                    </section>
+                    <section>
+                        <h3><span style="color: red">Ab</span>User und <span style="color: red">Security</span> Stories</h3>
+                        <img src="images/jira_stories.png" class="plain" width="70%">
+                    </section>
+                    <section>
+                        <img src="images/sprint_planning.png" class="plain" width="40%">
+                        <ul>
+                            <li>Detaillierung Threat Model</li>
+                            <li>Akzeptanzkriterien für Sicherheit</li>
+                            <li>Security Patterns diskutieren</li>
+                            <li>Security Testfälle</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3><span style="color: red">Ab</span>User Story Tasks</h3>
+                        <img src="images/jira_tasks_abuse_story.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <img src="images/daily_scrum.png" class="plain" width="20%">
+                        <br>
+                        <ul>
+                            <li>Neue Security-Risiken diskutieren</li>
+                            <li>Security Tasks ggf. neu planen</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <img src="images/sprint.png" class="plain" width="30%">
+                        <br>
+                        <ul>
+                            <li>Secure Design / Coding</li>
+                            <li>Pairing mit Security-Officer/Champion</li>
+                            <li>Security-Aware DoD</li>
+                            <li>Security Code Reviews</li>
+                            <li>CI Pipeline mit Security</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Agiles <span style="color: red">Security</span> Testing</h3>
+                        <img src="images/security_testing_parts.png" class="plain" width="85%">
+                        <small>Quelle: <a href="https://www.owasp.org/index.php/OWASP_Testing_Project">www.owasp.org/index.php/OWASP_Testing_Project</a></small>
+                    </section>
+                    <section>
+                        <h2>Entwickler Security Tests</h2>
+                        <h3 style="color: red">Bevor ein Angreifer &ldquo;testet&rdquo;</h3>
+                        <ul>
+                            <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/test.html">Security Unit/Integrationstests</a></li>
+                            <li><a href="https://github.com/zaproxy/zaproxy">OWASP ZAP</a></li>
+                            <li><a href="https://portswigger.net/burp">Burp Suite Free Edition</a></li>
+                            <li><a href="http://sqlmap.org">SQLMap</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4>CI Commit-Stage mit statischer Analyse (SAST)</h4>
+                        <img src="images/ci_commit_stage.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <h3>OWASP Dependency Check</h3>
+                        <ul>
+                            <li>Prüft Projektabhängigkeiten auf Sicherheitsprobleme</li>
+                            <li>Unterstützt Java und .NET Anwendungen</li>
+                            <li>Command line, Ant, Maven, Gradle, Jenkins, SBT</li>
+                        </ul>
+                        <p><small><a href="https://github.com/jeremylong/DependencyCheck">https://github.com/jeremylong/DependencyCheck</a></small></p>
+                    </section>
+                    <section>
+                        <h3>OWASP Dependency Check Report</h3>
+                        <p><img src="images/dependency_check_report.png" class="plain" width="100%"></p>
+                    </section>
+
+                    <section>
+                        <h4>CI Security-Stage mit dynamischer Analyse (DAST)</h4>
+                        <img src="images/ci_acceptance_testing_stage.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <img src="images/sprint_review_retro.png" class="plain" width="30%">
+                        <br>
+                        <ul>
+                            <li>Transparenz der Security gegenüber Stakeholdern</li>
+                            <li>Inspect & Adapt aller Security-Aktivitäten</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Idealzustand: Security == Agil!</h3>
+                        <img src="images/sprints_ideal_zustand.png" class="plain" width="100%">
+                    </section>
+                </section>
+
+                <!-- SecDevOps -->
+                <section>
+                    <section>
+                        <h2><span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h2>
+                        <img src="images/continuous_delivery_security.png" class="plain" width="100%">
+                    </section>
+                    <section>
+                        <h2>Security Officer/Champion in <span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h2>
+                        <img src="images/security_officer_devops.png" class="plain" width="85%">
+                    </section>
+                    <section>
+                        <h2>HTTPS ist Pflicht !!</h2>
+                        <p>
+                            <a href="https://letsencrypt.org/">Let's Encrypt</a><br>
+                            <a href="https://www.cloudflare.com/">CloudFlare</a><br>
+                            <a href="https://http2.github.io/">HTTP/2</a>
+                        </p>
+                        <img src="images/chrome-not-secure.gif" width="55%" class="plain">
+                    </section>
+                    <section>
+                        <h4>HTTPS-Konfiguration überprüfen</h4>
+                        <img src="images/ssl_report_andreasfalk_de.png" class="plain">
+                        <p><small><a href="https://www.ssllabs.com/ssltest/">www.ssllabs.com/ssltest</a></small></p>
+                    </section>
+                    <section>
+                        <h4>Security header überprüfen</h4>
+                        <img src="images/security_headers_andreasfalk_de.png" class="plain" width="75%">
+                        <p><small><a href="https://securityheaders.io/">securityheaders.io</a></small></p>
+                    </section>
+                    <section data-background="images/cloud.jpg" data-background-size="100%">
+                        <h1>Und in der Cloud?</h1>
+                    </section>
+                    <section>
+                        <h2>Alte Bekannte und mehr...</h2>
+                        <p>Alle OWASP Top 10 Web Probleme...</p>
+                        <p class="fragment highlight-current-red grow">Distributed DoS</p>
+                        <p class="fragment highlight-current-red grow">Economic DoS</p>
+                    </section>
+                    <section data-background="images/cloud.jpg">
+                        <h2>Und was ändert sich dann</h2>
+                        <h1>in der Cloud?</h1>
+                    </section>
+                    <section data-background="images/cloud_service_models.png" data-background-size="80%">
+                    </section>
+                    <section>
+                        <h2>Rotate, Repair, Repave</h2>
+                            <i>&ldquo;What if every server inside
+                             my data center had a maximum lifetime
+                            of two hours?
+                                This approach would frustrate malware writers...&rdquo;</i>
+                        <p>Justin Smith (Chief Security Officer at Pivotal)</p>
+                        <p><small><a href="https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave">https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave</a></small></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Damit das nicht passiert !!</h2>
+                        <img src="images/xbox_hacker.png" class="plain" width="85%">
+                        <small>Quelle: <a href="https://www.youtube.com/watch?v=ii1LkEXOjJo">youtube.com</a></small>
+                    </section>
+                    <section>
+                        <h2>Book References</h2>
+                        <img src="images/iron-glad-java.jpg" class="plain" width="24%">
+                        <img src="images/devops-handbook.jpg" class="plain" width="20%">
+                        <img src="images/threat-modeling-book.jpg" class="plain" width="24%">
+                        <img src="images/agile-security-book.jpg" class="plain" width="24%">
+                    </section>
+                    <section>
+                        <h2>Online References</h2>
+                        <small>
+                            <ul>
+                                <li><a href="https://haveibeenpwned.com">Have I been pwned?</a></li>
+                                <li><a href="https://shodan.io">Shodan.io</a></li>
+                                <li><a href="https://www.sicher-im-netz.de/downloads/dsin-sicherheitsindex-2017-0">Deutschland sicher im Netz (DsiN): Sicherheitsindex 2017</a></li>
+                                <li><a href="https://github.com/OWASP/Top10">OWASP Top 10 2017 (https://github.com/OWASP/Top10)</a></li>
+                                <li><a href="https://github.com/OWASP/ASVS">Application Security Verification Standard (https://github.com/OWASP/ASVS)</a></li>
+                                <li><a href="https://www.owasp.org/index.php/OWASP_Proactive_Controls">Pro Active Controls (https://www.owasp.org/index.php/OWASP_Proactive_Controls)</a></li>
+                                <li><a href="https://docs.microsoft.com/de-de/azure/security/azure-security-threat-modeling-tool">https://docs.microsoft.com/de-de/azure/security/azure-security-threat-modeling-tool</a></li>
+                                <li><a href="https://github.com/mike-goodwin/owasp-threat-dragon">https://github.com/mike-goodwin/owasp-threat-dragon</a></li>
+                                <li><a href="https://github.com/bkimminich/juice-shop">https://github.com/bkimminich/juice-shop</a></li>
+                                <li><a href="https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave">Rotate, Repair, Repave (https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave)</a></li>
+                            </ul>
+                            <p>All images used are from <a href="https://pixabay.com/">Pixabay</a> and are published under <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">Creative Commons CC0 license.</a></p>
+                            All used logos are trademarks of respective companies
+                        </small>
+                    </section>
+                    <section>
+                        <h1>Q&A</h1>
+                        <p>https://www.novatec-gmbh.de</br>
+                        https://blog.novatec-gmbh.de</p>
+                        <p>andreas.falk@novatec-gmbh.de</p>
+                        <p>@NT_AQE, @andifalk</p>
+                        <div style="float:left">
+                            <img src="images/logo_jax.png" class="plain" width="35%">
+                            <p><small>@JAX (Mainz)<br>25.4.2018<br><a href="https://jax.de/performance-security/datenschutz-in-der-cloud-mit-spring-cloud-vault/">Datenschutz in der Cloud mit<br> Spring Cloud Vault</a></small></p>
+                        </div>
+                        <div style="float:right">
+                            <img src="images/logo-spring-io.svg" class="plain" width="60%">
+                            <p><small>@Spring I/O (Barcelona)<br>24.5.-25.5.2018<br><a href="https://2018.springio.net/sessions/hands-on-securing-applications-with-spring-security-50-workshop">Spring Security Workshop</a></small></p>
+                        </div>
+
+                    </section>
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+                history: true,
+                center: true,
+                slideNumber: 'c/t',
+                previewLinks: true,
+
+                allottedTime: 60 * 60 * 1000, // 60 minutes
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+				dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/print-pdf/print-pdf.js' },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/tagcloud/tagcloud.js', async: true },
+                    { src: 'plugin/elapsed-time-bar/elapsed-time-bar.js'},
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() {
+					    hljs.initHighlightingOnLoad(); }
+					}
+				]
+			});
+            Reveal.configure({ slideNumber: 'c/t' });
+		</script>
+	</body>
+</html>
