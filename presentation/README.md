@@ -2,7 +2,7 @@
 
 Präsentation zum Vortrag "Agil aber sicher!"
 
-["Agil aber sicher" Präsentation](https://andifalk.github.io/agil-aber-sicher/presentation/index.html)
+["Agil aber sicher" Präsentation](https://andifalk.github.io/agil-aber-sicher-heise-devsec-2018/presentation/index.html)
 
 ## License
 
