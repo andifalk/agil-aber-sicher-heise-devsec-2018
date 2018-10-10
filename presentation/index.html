@@ -13,6 +13,9 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+        <link rel="icon" href="images/cropped-novatec-favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="images/cropped-novatec-favicon-192x192.png" sizes="192x192" />
+
         <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/novatec.css">
 
@@ -50,7 +53,7 @@
                         <small>
                             <p><strong>Novatec Consulting GmbH</strong></p>
                             </p>andreas.falk@novatec-gmbh.de / @andifalk (Twitter)<br>
-                            <br><a href="https://www.novatec-gmbh.de">https://www.novatec-gmbh.de</a><br>
+                            <br><a href="https://www.novatec-gmbh.de/beratung/agile-security/">https://www.novatec-gmbh.de/beratung/agile-security</a><br>
                             <img src="images/novatec_logo_big.png" class="plain" width="40%">
                         </small>
                     </section>
@@ -72,6 +75,13 @@
                             <small>
                                 Quelle: <a href="https://www.heise.de/newsticker/meldung/34C3-Das-besondere-Anwaltspostfach-beA-als-besondere-Stuemperei-3928474.html">heise.de</a>
                             </small>
+                    </section>
+                    <section>
+                        <img src="images/whatsapp_luecke.png" class="plain" width="58%">
+                        <br>
+                        <small>
+                            Quelle: <a href="https://www.heise.de/security/meldung/Kritische-Sicherheitsluecke-gefaehrdet-Milliarden-WhatsApp-Nutzer-4186365.html">heise.de</a>
+                        </small>
                     </section>
                     <section>
                         <h3>State of Software Security Report 2017</h3>
@@ -134,15 +144,80 @@
                             Quelle: <a href="https://shodan.io">shodan.io</a>
                         </small>
                     </section>
-                    <section data-background="images/attacks.png" data-background-size="80%">
-                    </section>
                     <section>
                         <h2>Wir haben doch eine Firewall</h2>
                         <img src="images/firewall.png" class="plain" width="90%">
                     </section>
                     <section>
+                        <h2>Antipattern</h2>
+                        <h3>Der Pen-Test kurz vor</h3>
+                        <h3>&ldquo;Going Live&rdquo;</h3>
+                        <p>&ldquo;Wir testen die Sicherheit in die Software hinein&rdquo;</p>
+                    </section>
+                    <section>
+                        <h2>Unverständliche Pen-Test Reports</h2>
+                        <img src="images/unclear_pen_test_report.png" class="plain">
+                    </section>
+                    <section data-background="images/attacks.png" data-background-size="80%">
+                    </section>
+                    <section>
                         <h1>Weiter so?</h1>
+                        <h2>Was nun?</h2>
                         <img src="images/dices.png" class="plain" width="60%">
+                    </section>
+                </section>
+
+
+                <!-- SecDevOps -->
+
+                <section>
+                    <section>
+                        <h1><span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h1>
+                        <h1 class="fragment fade-out"><span style="color: darkblue">Dev</span><span style="color: red">Sec</span><span style="color: #1b91ff">Ops</span></h1>
+                        <h1 class="fragment fade-out"><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span><span style="color: red">Sec</span></h1>
+                        <h2 class="fragment fade-in"><<< &ldquo;Shift Left&rdquo; <<<</h2>
+                    </section>
+                    <section>
+                        <h2>The Big Picture</h2>
+                        <img src="images/big_picture_security.png" class="plain" width="85%">
+                    </section>
+                    <section data-background="images/cloud.jpg" data-background-size="100%">
+                        <h1>Und in der Cloud?</h1>
+                    </section>
+                    <section>
+                        <h2>Alte Bekannte und mehr...</h2>
+                        <p>Alle OWASP Top 10 Web Probleme...</p>
+                        <p class="fragment highlight-current-red grow">Distributed DoS</p>
+                        <p class="fragment highlight-current-red grow">Economic DoS</p>
+                    </section>
+                    <section>
+                        <h2>HTTPS ist Pflicht !!</h2>
+                        <p>
+                            <a href="https://letsencrypt.org/">Let's Encrypt</a><br>
+                            <a href="https://www.cloudflare.com/">CloudFlare</a><br>
+                            <a href="https://http2.github.io/">HTTP/2</a>
+                        </p>
+                        Aktuelle Chrome Versionen:<br>
+                        <img src="images/browser_https.png" width="55%" class="plain">
+                    </section>
+                    <section data-background="images/cloud.jpg">
+                        <h2>Und was ändert sich dann</h2>
+                        <h1>in der Cloud?</h1>
+                    </section>
+                    <section data-background="images/cloud_service_models.png" data-background-size="80%">
+                    </section>
+                    <section>
+                        <h2>Rotate, Repair, Repave</h2>
+                        <i>&ldquo;What if every server inside
+                            my data center had a maximum lifetime
+                            of two hours?
+                            This approach would frustrate malware writers...&rdquo;</i>
+                        <p>Justin Smith (Chief Security Officer at Pivotal)</p>
+                        <p><small><a href="https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave">https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Security Officer in <span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h2>
+                        <img src="images/security_officer_devops.png" class="plain" width="80%">
                     </section>
                 </section>
 
@@ -171,53 +246,6 @@
                     <section>
                         <h3>Ausgangslage: Security != Agil!</h3>
                         <img src="images/sprint_ausgangslage.png" class="plain" width="100%">
-                    </section>
-                    <section>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Agile Entwicklung</th>
-                                <th>Penetration-Testing</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>Inkrementell mit schnellem Feedback</td>
-                                <td>Punktuell und Aufwendig</td>
-                            </tr>
-                            <tr>
-                                <td>Innerhalb von Sprints</td>
-                                <td>Abseits von Sprints</td>
-                            </tr>
-                            <tr>
-                                <td>&ldquo;Working software over comprehensive documentation&rdquo;</td>
-                                <td>Umfassende Reports</td>
-                            </tr>
-                            <tr>
-                                <td>Business Value</td>
-                                <td>Nicht-Funktional</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section>
-                        <h2>Unverständliche Pen-Test Reports</h2>
-                        <img src="images/unclear_pen_test_report.png" class="plain">
-                    </section>
-                </section>
-
-                <!-- Security + Scrum -->
-
-                <section>
-                    <section>
-                        <h1><span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h1>
-                        <h1 class="fragment fade-out"><span style="color: darkblue">Dev</span><span style="color: red">Sec</span><span style="color: #1b91ff">Ops</span></h1>
-                        <h1 class="fragment fade-out"><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span><span style="color: red">Sec</span></h1>
-                        <h2 class="fragment fade-in"><<< &ldquo;Shift Left&rdquo; <<<</h2>
-                    </section>
-                    <section>
-                        <h2>The Big Picture</h2>
-                        <img src="images/big_picture_security.png" class="plain" width="85%">
                     </section>
                     <section>
                         <h2><span style="color: red">Security</span> in <span style="color: darkblue">Scrum</span></h2>
@@ -281,8 +309,9 @@
                         </div>
                     </section>
                     <section>
-                        <h2>Juice Shop</h2>
-                        <img src="images/juice_shop.png" class="plain">
+                        <h2>Security DoJo's</h2>
+                        <h3>Juice Shop</h3>
+                        <img src="images/juice_shop.png" class="plain" width="80%">
                         <p>
                             <small>
                                 <a href="https://github.com/bkimminich/juice-shop">https://github.com/bkimminich/juice-shop</a>
@@ -379,6 +408,9 @@
                         </ul>
                     </section>
                     <section>
+                        <h3>Absicherung der CI/CD-Pipeline nicht vergessen</h3>
+                    </section>
+                    <section>
                         <h3>Idealzustand: Security == Agil!</h3>
                         <img src="images/sprints_ideal_zustand.png" class="plain" width="100%">
                     </section>
@@ -387,44 +419,11 @@
                 <!-- SecDevOps -->
                 <section>
                     <section>
-                        <h2>Security Officer in <span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h2>
-                        <img src="images/security_officer_devops.png" class="plain" width="80%">
-                    </section>
-                    <section>
-                        <h2>HTTPS ist Pflicht !!</h2>
-                        <p>
-                            <a href="https://letsencrypt.org/">Let's Encrypt</a><br>
-                            <a href="https://www.cloudflare.com/">CloudFlare</a><br>
-                            <a href="https://http2.github.io/">HTTP/2</a>
-                        </p>
-                        Aktuelle Chrome Versionen:<br>
-                        <img src="images/browser_https.png" width="55%" class="plain">
-                    </section>
-                    <section data-background="images/cloud.jpg" data-background-size="100%">
-                        <h1>Und in der Cloud?</h1>
-                    </section>
-                    <section>
-                        <h2>Alte Bekannte und mehr...</h2>
-                        <p>Alle OWASP Top 10 Web Probleme...</p>
-                        <p class="fragment highlight-current-red grow">Distributed DoS</p>
-                        <p class="fragment highlight-current-red grow">Economic DoS</p>
-                    </section>
-                    <section data-background="images/cloud.jpg">
-                        <h2>Und was ändert sich dann</h2>
-                        <h1>in der Cloud?</h1>
-                    </section>
-                    <section data-background="images/cloud_service_models.png" data-background-size="80%">
-                    </section>
-                    <section>
-                        <h2>Rotate, Repair, Repave</h2>
-                            <i>&ldquo;What if every server inside
-                             my data center had a maximum lifetime
-                            of two hours?
-                                This approach would frustrate malware writers...&rdquo;</i>
-                        <p>Justin Smith (Chief Security Officer at Pivotal)</p>
-                        <p><small><a href="https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave">https://thenewstack.io/cloud-foundrys-approach-security-rotate-repair-repave</a></small></p>
+                        <h2>The Big Picture Again</h2>
+                        <img src="images/big_picture_security.png" class="plain" width="85%">
                     </section>
                 </section>
+
                 <section>
                     <section>
                         <h2>Book References</h2>
@@ -435,10 +434,10 @@
                     </section>
                     <section>
                         <h1>Q&A</h1>
-                        <p>https://www.novatec-gmbh.de</br>
-                        https://blog.novatec-gmbh.de</p>
-                        <p>andreas.falk@novatec-gmbh.de</p>
-                        <p>@andifalk</p>
+                        <a href="https://www.novatec-gmbh.de/beratung/agile-security/">https://www.novatec-gmbh.de/beratung/agile-security</a></br>
+                        <a href="https://blog.novatec-gmbh.de/">https://blog.novatec-gmbh.de</a><br>
+                        andreas.falk@novatec-gmbh.de<br>
+                        @andifalk<br>
                         <img src="images/it_tage_2018.png" class="plain" width="20%">
                         <br><small>IT-Tage 2018 (Frankfurt)<br>12.12.2018<br><a href="https://www.ittage.informatik-aktuell.de/programm/2018/continuous-delivery-pipelines-mit-concourse-ci/">Continuous Delivery-Pipelines mit Concourse CI</a></small></br>
                     </section>
