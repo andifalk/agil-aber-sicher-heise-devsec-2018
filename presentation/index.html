@@ -104,6 +104,14 @@
                         <small>
                             Quelle: <a href="https://www.sicher-im-netz.de/sicherheitsindex-2018">Deutschland sicher im Netz (DsiN): Sicherheitsindex 2018</a>
                         </small>
+                        <aside class="notes">
+                            - Vergleich Bedrohungslage mit Schutzniveau der Verbraucher
+                            - > 50 Indexpunkten, überwiegt das Schutzniveau, < 50: Bedrohungslage
+                            - Außenstehende: Älter und meist männlich
+                            - Fatalistische: Alter 50+ und 16-29, Zweifeln
+                            - Gutgläubige: 20 und 29 bzw. 50 und 59
+                            - Antreibende: 20 und 49, sehr intensive Inmternetnutzung
+						</aside>
                     </section>
                     <section>
                         <h4><span style="color: red">1</span> Security-Professional für <span style="color: darkblue">100</span> Entwickler</h4>
@@ -211,14 +219,6 @@
                         </div>
                     </section>
                     <section>
-                        <h3>Absicherung der CI/CD-Pipeline</h3>
-                        <p>Keine Credentials in VCS (Git, SVN, ...)</p>
-                        <p>Credentials in Jenkins, Concourse,... sicher ablegen</p>
-                        <p>Jenkins & Co regelmäßig aktualisieren</p>
-                        <p>Test Code ist kein 2.Klasse Code</p>
-                        <img src="images/demo_build_repo_deploy.png" class="plain">
-                    </section>    
-                    <section>
                         <h1><span style="color: red">Sec</span><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span></h1>
                         <h1 class="fragment fade-out"><span style="color: darkblue">Dev</span><span style="color: red">Sec</span><span style="color: #1b91ff">Ops</span></h1>
                         <h1 class="fragment fade-out"><span style="color: darkblue">Dev</span><span style="color: #1b91ff">Ops</span><span style="color: red">Sec</span></h1>
@@ -265,14 +265,11 @@
                         <img src="images/security_scrum_overview.png" class="plain" width="100%">
                     </section>
                     <section>
-                        <h3>Security Officer/Champion</h3>
-                        <img src="images/security_officer_scrum.png" class="plain" width="100%">
-                    </section>
-                    <section>
                         <h3>Security Trainings</h3>
                         <img src="images/product_owner.png" class="plain" width="50%">
                         <br>
                         <ul>
+                            <li>Identifikation von Assets</li>
                             <li>Sicherheits-Risiken</li>
                             <li>Datenschutz-Risiken</li>
                             <li>Threat Modeling</li>
@@ -286,6 +283,7 @@
                     <section>
                         <h3><span style="color: red">Ab</span>User Stories</h3>
                         <img src="images/abuser_stories.png" class="plain">
+                        <p class="fragment fade-up">-> &ldquo;Agile Penetrationtests&rdquo; (C.Haas), 14:10 Uhr</p>
                     </section>                    
                     <section>
                         <h3>Security Trainings</h3>
@@ -298,15 +296,6 @@
                             <li>Security Testing</li>
                             <li>Security Dojos</li>
                         </ul>
-                    </section>
-                    <section>
-                        <h1>Open <s>Web</s> Application Security Project</h1>
-                        <img src="images/owasp_logo.jpg" class="plain">
-                        <p>
-                            <small>
-                                <a href="https://www.owasp.org">https://www.owasp.org</a>
-                            </small>
-                        </p>
                     </section>
                     <section>
                         <h3>OWASP Top Projekte</h3>
@@ -338,24 +327,6 @@
                     <section>
                         <h3>Slack Security Champions</h3>
                         <img src="images/novatec_slack.png" class="plain" width="90%">
-                    </section>
-                    <section>
-                        <img src="images/product_backlog_security.png" class="plain" width="50%">
-                        <ul>
-                            <li>Threat Model Refinement</li>
-                            <li><span style="color: red">Ab</span>User Stories erstellen</li>
-                            <li>Security Features mit hoher Prio</li>
-                            <li>Akzeptanzkriterien für Sicherheit</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <img src="images/sprint_planning.png" class="plain" width="40%">
-                        <ul>
-                            <li>Detaillierung Threat Model</li>
-                            <li>Akzeptanzkriterien für Sicherheit</li>
-                            <li>Security Patterns diskutieren</li>
-                            <li>Security Testfälle</li>
-                        </ul>
                     </section>
                     <section>
                         <img src="images/sprint.png" class="plain" width="30%">
@@ -392,6 +363,14 @@
                         <h4>CI Security-Stage mit dynamischer Analyse (DAST)</h4>
                         <img src="images/ci_acceptance_testing_stage.png" class="plain" width="100%">
                     </section>
+                    <section>
+                        <h3>Absicherung der CI/CD-Pipeline</h3>
+                        <p>Keine Credentials in VCS (Git, SVN, ...)</p>
+                        <p>Credentials in Jenkins, Concourse,... sicher ablegen</p>
+                        <p>Jenkins & Co regelmäßig aktualisieren</p>
+                        <p>Test Code ist kein 2.Klasse Code</p>
+                        <img src="images/demo_build_repo_deploy.png" class="plain">
+                    </section>    
                     <section>
                         <img src="images/sprint_review_retro.png" class="plain" width="30%">
                         <br>
